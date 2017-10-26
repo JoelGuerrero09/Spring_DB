@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+
+<bean id="miBean" class="org.ipn.bean.BeanSpring">
+	<property name ="mensaje" value="Hola al mundo de Spring, soy experto en Spring" />
+</bean>
+
+<!--  
+<bean id ="Direccion" class="org.ipn.bean.Direccion">
+<constructor-arg  name="calle" value= "insurgentes 3000 "/>
+<constructor-arg  name="cp" value= "30000"/>
+	
+</bean>
+-->
+
+
+<bean id ="admin" class="org.ipn.bean.Administrador">
+	<property name="idAd" value="77"></property>
+	<property name="nombre" value="Juan"></property>
+	
+
+
+</bean>
+
+
+<context:component-scan base-package="org.ipn.bean"></context:component-scan>
+
+<bean id= "dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+	<property name = "driverClassName" value="com.mysql.jdbc.Driver"></property>
+	<property name = "url" value="jdbc:mysql://localhost:3306/SystemaEscom"></property>
+	<property name = "username" value="root"></property>
+	<property name = "password" value=""></property>
+	
+</bean>
+
+</beans>
